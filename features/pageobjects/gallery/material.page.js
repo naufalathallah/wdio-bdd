@@ -1,4 +1,5 @@
 import { $ } from "@wdio/globals";
+import { scrollToEnd } from "../../../utils/helpers.js";
 
 export default class MaterialPage {
   get btnPullToRefresh() {
@@ -8,9 +9,18 @@ export default class MaterialPage {
   }
 
   async navigateToPullToRefresh() {
-    await $(
-      "android=new UiScrollable(new UiSelector().scrollable(true)).scrollToEnd(1,5)"
-    );
+    await scrollToEnd();
     await this.btnPullToRefresh.click();
+  }
+
+  get btnTextField() {
+    return $(
+      `//android.widget.Button[@text='Text fields\nSingle line of editable text and numbers']`
+    );
+  }
+
+  async navigateToTextField() {
+    await scrollToEnd();
+    await this.btnTextField.click();
   }
 }
