@@ -1,6 +1,6 @@
 Feature: Test Application Functionality
 
-  @tcid-1 @only
+  @tcid-1
   Scenario Outline: Verify button click in <type>
     When I go to the Cupertino menu
     And I go to Alerts sub menu
@@ -13,13 +13,16 @@ Feature: Test Application Functionality
       | Alert             | Discard   | 
       | Alert with Title  | Allow     | 
 
-  @tcid-2
+  @tcid-2 @only
   Scenario Outline: Verify snackbar message after refresh
-    Given the app is open
-    When I go to the "Material" menu
-    And I go to "Pull to refresh"
-    And I refresh the content
-    Then I verify that the snackbar shows "Refresh complete"
+    When I go to the Material menu
+    And I go to Pull to refresh sub menu
+    And I pull to refresh the content
+    Then I verify that the snackbar shows <message>
+
+    Examples:
+      | message           | 
+      | Refresh complete  | 
 
   # @tcid-3
   # Scenario Outline: Fill and submit the text field
