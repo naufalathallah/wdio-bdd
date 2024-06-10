@@ -24,7 +24,7 @@ Feature: Test Application Functionality
       | message           | 
       | Refresh complete  | 
 
-  @tcid-3 @only
+  @tcid-3
   Scenario Outline: Fill and submit the text field
     When I go to the Material menu
     And I go to Text fields sub menu

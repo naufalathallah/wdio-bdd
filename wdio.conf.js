@@ -32,7 +32,7 @@ export const config = {
     snippets: true,
     source: true,
     strict: false,
-    tagExpression: "@only",
+    tagExpression: "",
     timeout: 60000,
     ignoreUndefinedDefinitions: false,
   },
