@@ -1,0 +1,44 @@
+# Node.js dependencies
+node_modules/
+package-lock.json
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Environment variables
+.env
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# MacOS
+.DS_Store
+
+# IDEs and editors
+.idea/
+.vscode/
+*.swp
+
+# Typescript
+*.tsbuildinfo
+
+# WebdriverIO
+allure-results/
+junit-results/
+html-reports/
+
+# Appium
+/appium-logs/
+
+# Miscellaneous
+*.tmp
+*.temp
+
+# Operating System files
+Thumbs.db
+Desktop.ini
+
+# Local Appium Server
+/appium-logs/
