@@ -1,8 +1,11 @@
-import { Given, When, Then, After } from "@wdio/cucumber-framework";
-import { expect } from "@wdio/globals";
-import HomeGallery from "../pageobjects/gallery/home.page.js";
+import { When, Then, After } from "@wdio/cucumber-framework";
+import HomePage from "../pageobjects/gallery/home.page.js";
+import CupertinoPage from "../pageobjects/gallery/cupertino.page.js";
+import AlertsPage from "../pageobjects/gallery/alerts.page.js";
 
-const homeGallery = new HomeGallery();
+const homePage = new HomePage();
+const cupertinoPage = new CupertinoPage();
+const alertsPage = new AlertsPage();
 
 After(async () => {
   await driver.back();
@@ -10,24 +13,21 @@ After(async () => {
 });
 
 When(/^I go to the Cupertino menu$/, async () => {
-  await homeGallery.btnMenuCupertino.click();
+  await homePage.navigateToCupertino();
 });
 
 When(/^I go to Alerts sub menu$/, async () => {
-  await homeGallery.btnMenuAlerts.click();
+  await cupertinoPage.navigateToAlerts();
 });
 
 When(/^I click the button (.*)$/, async (type) => {
-  const alertButton = homeGallery.getAlertButton(type);
-  await alertButton.click();
+  await alertsPage.clickAlertButton(type);
 });
 
 When(/^I click the alert option (.*)$/, async (choice) => {
-  const alertOption = homeGallery.getAlertOption(choice);
-  await alertOption.click();
+  await alertsPage.clickAlertOption(choice);
 });
 
 Then(/^I verify the message (.*) clicked is shown$/, async (choice) => {
-  const alertMessage = await homeGallery.getAlertMessage(choice);
-  await expect(alertMessage).toBeDisplayed();
+  await alertsPage.verifyAlertMessage(choice);
 });
