@@ -1,6 +1,9 @@
 Feature: Test Application Functionality
 
-  @tcid-1
+  Background:
+      Given I set the app to "gallery"
+
+  @gallery-app
   Scenario Outline: Verify button click in <type>
     When I go to the Cupertino menu
     And I go to Alerts sub menu
@@ -13,7 +16,7 @@ Feature: Test Application Functionality
       | Alert             | Discard   | 
       | Alert with Title  | Allow     | 
 
-  @tcid-2
+  @gallery-app
   Scenario Outline: Verify snackbar message after refresh
     When I go to the Material menu
     And I go to Pull to refresh sub menu
@@ -24,7 +27,7 @@ Feature: Test Application Functionality
       | message           | 
       | Refresh complete  | 
 
-  @tcid-3
+  @gallery-app
   Scenario Outline: Fill and submit the text field
     When I go to the Material menu
     And I go to Text fields sub menu
