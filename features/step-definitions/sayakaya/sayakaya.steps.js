@@ -1,6 +1,15 @@
-import { When } from "@wdio/cucumber-framework";
+import { Given, When, Then } from "@wdio/cucumber-framework";
+import ProfilePage from "../../pageobjects/sayakaya/profile.page.js";
 
-When(/^debugging$/, async () => {
-  await driver.pause(10000);
-  console.log("=========================\nIni di sayakaya");
+Given(/^I am on the profile page$/, async () => {
+  await ProfilePage.navigateToProfile();
+});
+
+When(/^I click (.*) account$/, async (menu) => {
+  await ProfilePage.clickMenu(menu);
+});
+
+Then(/^I expect (.*) text to be displayed$/, async (expected) => {
+  await ProfilePage.verifyTextDisplayed(expected);
+  await driver.back();
 });

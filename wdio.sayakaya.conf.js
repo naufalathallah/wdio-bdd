@@ -1,3 +1,5 @@
+import { loginToSayakaya } from "./utils/hooks.js";
+
 export const config = {
   runner: "local",
   port: 4723,
@@ -36,5 +38,8 @@ export const config = {
     tagExpression: "",
     timeout: 60000,
     ignoreUndefinedDefinitions: false,
+  },
+  before: async (world, context) => {
+    await loginToSayakaya();
   },
 };
