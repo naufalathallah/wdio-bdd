@@ -1,7 +1,7 @@
 export const config = {
   runner: "local",
   port: 4723,
-  specs: ["./features/*.feature"],
+  specs: ["./features/gallery-app.feature"],
   exclude: [],
   maxInstances: 10,
   capabilities: [
@@ -24,7 +24,7 @@ export const config = {
   framework: "cucumber",
   reporters: ["spec"],
   cucumberOpts: {
-    require: ["./features/step-definitions/*.js"],
+    require: ["./features/step-definitions/*/*.js"],
     backtrace: false,
     requireModule: [],
     dryRun: false,
