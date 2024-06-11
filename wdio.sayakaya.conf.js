@@ -1,7 +1,7 @@
 export const config = {
   runner: "local",
   port: 4723,
-  specs: ["./features/gallery-app.feature"],
+  specs: ["./features/sayakaya.feature"],
   exclude: [],
   maxInstances: 10,
   capabilities: [
@@ -10,8 +10,9 @@ export const config = {
       "appium:platformVersion": process.env.ANDROID_PLATFORM_VERSION,
       "appium:deviceName": process.env.ANDROID_DEVICE_NAME,
       "appium:automationName": process.env.ANDROID_AUTOMATION_NAME,
-      "appium:appPackage": "io.flutter.demo.gallery",
-      "appium:appActivity": ".MainActivity",
+      "appium:appPackage": "com.sayakaya.android",
+      "appium:appActivity":
+        "io.flutter.embedding.android.FlutterFragmentActivity",
       "appium:autoGrantPermissions": true,
     },
   ],
@@ -24,7 +25,7 @@ export const config = {
   framework: "cucumber",
   reporters: ["spec"],
   cucumberOpts: {
-    require: ["./features/step-definitions/gallery/*.js"],
+    require: ["./features/step-definitions/sayakaya/*.js"],
     backtrace: false,
     requireModule: [],
     dryRun: false,

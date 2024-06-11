@@ -1,8 +1,5 @@
 Feature: Test Application Functionality
 
-  Background:
-      Given I set the app to "gallery"
-
   @gallery-app
   Scenario Outline: Verify button click in <type>
     When I go to the Cupertino menu
