@@ -1,6 +1,6 @@
 import { When } from "@wdio/cucumber-framework";
-import MaterialPage from "../pageobjects/gallery/material.page.js";
-import TextFieldPage from "../pageobjects/gallery/text-field.page.js";
+import MaterialPage from "../../pageobjects/gallery/material.page.js";
+import TextFieldPage from "../../pageobjects/gallery/text-field.page.js";
 
 const materialPage = new MaterialPage();
 const textFieldPage = new TextFieldPage();

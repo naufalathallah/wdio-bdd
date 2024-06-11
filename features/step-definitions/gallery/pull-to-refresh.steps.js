@@ -1,8 +1,8 @@
 import { Then, When } from "@wdio/cucumber-framework";
-import HomePage from "../pageobjects/gallery/home.page.js";
-import MaterialPage from "../pageobjects/gallery/material.page.js";
-import PullToRefreshPage from "../pageobjects/gallery/pull-to-refresh.page.js";
-import { doubleBack, verifySnackbarMessage } from "../../utils/helpers.js";
+import HomePage from "../../pageobjects/gallery/home.page.js";
+import MaterialPage from "../../pageobjects/gallery/material.page.js";
+import PullToRefreshPage from "../../pageobjects/gallery/pull-to-refresh.page.js";
+import { doubleBack, verifySnackbarMessage } from "../../../utils/helpers.js";
 
 const homePage = new HomePage();
 const materialPage = new MaterialPage();

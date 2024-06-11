@@ -1,8 +1,8 @@
 import { When, Then, Given } from "@wdio/cucumber-framework";
-import HomePage from "../pageobjects/gallery/home.page.js";
-import CupertinoPage from "../pageobjects/gallery/cupertino.page.js";
-import AlertsPage from "../pageobjects/gallery/alerts.page.js";
-import { doubleBack } from "../../utils/helpers.js";
+import HomePage from "../../pageobjects/gallery/home.page.js";
+import CupertinoPage from "../../pageobjects/gallery/cupertino.page.js";
+import AlertsPage from "../../pageobjects/gallery/alerts.page.js";
+import { doubleBack } from "../../../utils/helpers.js";
 
 const homePage = new HomePage();
 const cupertinoPage = new CupertinoPage();
